@@ -47,16 +47,17 @@ FROM Products
 WHERE OnSale = true;
 
 -- find the average price of all products
-SELECT AVG(Price)
+SELECT AVG(Price) AS "Average price of all Best Buy products"
 FROM Products;
 
 -- find all Geek Squad employees who don't have a middle initial
 SELECT *
-FROM employees
-WHERE MiddleInitial IS NULL;
+FROM Employees
+WHERE MiddleInitial IS NULL
+AND Title = 'Geek Squad';
 
 -- find all products from the products table whose stock level is in the range -- of 500 to 1200. Order by Price from least to greatest. Hint: Use the between keyword
 SELECT *
 FROM Products
-WHERE StockLevel BETWEEN 500 AND 1200
+WHERE StockLevel BETWEEN 500 AND EmployeeID1200
 ORDER BY Price;
